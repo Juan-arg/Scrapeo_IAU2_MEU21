@@ -5,15 +5,22 @@ date: "14/9/2021"
 output: html_document
 ---
 
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+#Mostramos la variacion diaria del dolar en relacion a los pesos argentinos desde la web
+
 
 ```{r}
-library(usethis)
-
+dolar_argentina <- read_html("https://www.cronista.com/MercadosOnline/dolar.html") 
 ```
 
 
 ```{r}
-library(usethis)
-use_git_config(user.name = "Juan-arg", user.email = "arq.juanvargas.mas@gmail.com")
+variacion_dolar <- dolar_argentina %>% 
+  html_elements("a") %>% 
+  html_text()
 ```
 
