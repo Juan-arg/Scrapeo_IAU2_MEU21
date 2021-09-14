@@ -38,6 +38,11 @@ contagios <- covid_CABA %>%
   html_table()
 ```
 
+#Guardamos los datos en una tabla
+
+```{r}
+contagios_tabla <- contagios[[1]]
+```
 
 
 
@@ -49,9 +54,16 @@ AA2000 <- read_html("https://www.aa2000.com.ar/")
 
 
 
+
 ```{r}
 VUELOS <- AA2000 %>% 
   html_nodes( xpath = '//*[@id="UpdatePanel2"]')%>% 
   html_table()
+```
+
+#Guardamos los datos en una tabla
+
+```{r}
+tabla_AA200 <- VUELOS[[1]] 
 ```
 
