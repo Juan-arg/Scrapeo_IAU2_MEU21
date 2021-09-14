@@ -1,0 +1,19 @@
+---
+title: "Scrapeo"
+author: "Juan Vargas"
+date: "14/9/2021"
+output: html_document
+---
+
+
+```{r}
+library(usethis)
+
+```
+
+
+```{r}
+library(usethis)
+use_git_config(user.name = "Juan-arg", user.email = "arq.juanvargas.mas@gmail.com")
+```
+
