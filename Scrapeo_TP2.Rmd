@@ -24,3 +24,34 @@ variacion_dolar <- dolar_argentina %>%
   html_text()
 ```
 
+
+#Mostramos la informacion desde la web sobre los contagios de Covid-19 en Ciudad de Buenos Aires
+
+```{r}
+covid_CABA <- read_html ("https://es.wikipedia.org/wiki/Pandemia_de_COVID-19_en_la_Ciudad_Aut%C3%B3noma_de_Buenos_Aires")
+```
+
+
+```{r}
+contagios <- covid_CABA %>% 
+  html_nodes( xpath = '//*[@id="mw-content-text"]/div[1]/div[2]/table/tbody/tr/td[1]/div/table')%>% 
+  html_table()
+```
+
+
+
+
+#Desde la pagina de Argentina Aeropuertos 2000 (AA200) mostramos los arribos y partidas para el Aeropuerto de Ezeiza (EZE)
+
+```{r}
+AA2000 <- read_html("https://www.aa2000.com.ar/")
+```
+
+
+
+```{r}
+VUELOS <- AA2000 %>% 
+  html_nodes( xpath = '//*[@id="UpdatePanel2"]')%>% 
+  html_table()
+```
+
